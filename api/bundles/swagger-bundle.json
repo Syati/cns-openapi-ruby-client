@@ -102,10 +102,17 @@
                           "example": 1
                         },
                         "corporation": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/components/schemas/Corporation"
-                          }
+                          "anyOf": [
+                            {
+                              "type": "array",
+                              "items": {
+                                "$ref": "#/components/schemas/Corporation"
+                              }
+                            },
+                            {
+                              "$ref": "#/components/schemas/Corporation"
+                            }
+                          ]
                         }
                       },
                       "required": [

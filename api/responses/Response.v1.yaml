@@ -19,9 +19,11 @@ properties:
     description: 分割されたファイルの総数（分母）にあたるデータ項目。
     example: 1
   corporation:
-    type: array
-    items:
-      $ref: ../models/Corporation.v1.yaml
+    anyOf:
+      - type: array
+        items:
+          $ref: ../models/Corporation.v1.yaml
+      - $ref: ../models/Corporation.v1.yaml
 required:
   - lastUpdateDate
   - count

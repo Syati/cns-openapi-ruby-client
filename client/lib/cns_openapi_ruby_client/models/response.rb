@@ -53,7 +53,7 @@ module CnsOpenapiRubyClient
         :'count' => :'Integer',
         :'divide_number' => :'Integer',
         :'divide_size' => :'Integer',
-        :'corporation' => :'Array<Corporation>'
+        :'corporation' => :'AnyOfarrayCorporation'
       }
     end
 
@@ -95,9 +95,7 @@ module CnsOpenapiRubyClient
       end
 
       if attributes.key?(:'corporation')
-        if (value = attributes[:'corporation']).is_a?(Array)
-          self.corporation = value
-        end
+        self.corporation = attributes[:'corporation']
       end
     end
 
